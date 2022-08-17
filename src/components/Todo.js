@@ -18,16 +18,16 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   };
 
   if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate} />; // 만약 유저가 update icon을 클릭하면 위의 submitUpdate로 간다
+    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return todos.map((todo, index) => ( // 위의 if가 아니라면 이 부분을 return해라
+  return todos.map((todo, index) => (
     <div
-      className={todo.isComplete ? 'todo-row complete' : 'todo-row'} // 조건에 따라 className을 바꿔라
+      className={todo.isComplete ? 'todo-row complete' : 'todo-row'}
       key={index}
     >
-      <div key={todo.id} onClick={() => completeTodo(todo.id)}> {/* 유저가 to-do를 complete 하면 TodoList.js 에 todo.id를 보낸다 */}
-        {todo.text} {/* to-do List의 text를 보여줌 */}
+      <div key={todo.id} onClick={() => completeTodo(todo.id)}>
+        {todo.text}
       </div>
       <div className="icons">
         <RiCloseCircleLine
