@@ -10,8 +10,8 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   });
 
   const submitUpdate = (value) => {
-    updateTodo(edit.id, value); // TodoList.js 에 edit.id와 value를 보낸다
-    setEdit({ // 다시 입력창을 빈 상태로 clear
+    updateTodo(edit.id, value);
+    setEdit({
       id: null,
       value: '',
     });
